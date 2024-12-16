@@ -7,7 +7,8 @@ export default defineConfig({
     plugins: [
         react(),
         keycloakify({
-            accountThemeImplementation: "none"
+            accountThemeImplementation: "Single-Page",
+            themeName: ["saas-account-v3", "saas-login-v3"],
         })
     ]
 });

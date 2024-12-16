@@ -40,5 +40,6 @@ Adding Story:
 npx keycloakify add-story
 
 
-Account theme init
+Account theme init || choose single page for v3 
 npx keycloakify initialize-account-theme
+
