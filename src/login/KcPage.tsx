@@ -3,9 +3,15 @@ import type { ClassKey } from "keycloakify/login";
 import type { KcContext } from "./KcContext";
 import { useI18n } from "./i18n";
 import DefaultPage from "keycloakify/login/DefaultPage";
-import Template from "keycloakify/login/Template";
+import Template from "./Template";
+
+const Login = lazy(() => import("./pages/Login"));
+const DeleteAccountConfirm = lazy(() => import("./pages/DeleteAccountConfirm"));
+const Error = lazy(() => import("./pages/Error"));
+const Info = lazy(() => import("./pages/Info"));
+const LoginUpdateProfile = lazy(() => import("./pages/LoginUpdateProfile"));
 const UserProfileFormFields = lazy(
-    () => import("keycloakify/login/UserProfileFormFields")
+    () => import("./UserProfileFormFields")
 );
 
 const doMakeUserConfirmPassword = true;
@@ -19,6 +25,43 @@ export default function KcPage(props: { kcContext: KcContext }) {
         <Suspense>
             {(() => {
                 switch (kcContext.pageId) {
+                    case "login.ftl": return (
+                        <Login
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
+                    case "error.ftl": return (
+                        <Error
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
+                    case "login-update-profile.ftl": return (
+                        <LoginUpdateProfile
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                            UserProfileFormFields={UserProfileFormFields}
+                            doMakeUserConfirmPassword={doMakeUserConfirmPassword}
+                        />
+                    );
+                    case "info.ftl": return (
+                        <Info
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
+                    case "delete-account-confirm.ftl": return (
+                        <DeleteAccountConfirm
+                            {...{ kcContext, i18n, classes }}
+                            Template={Template}
+                            doUseDefaultCss={true}
+                        />
+                    );
                     default:
                         return (
                             <DefaultPage

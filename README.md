@@ -1,6 +1,6 @@
 ## Keycloakify for keycloak 26.x.x
 
-### Installation:
+### Project Installation:
 
     Step 1:
     $ Pull the repo 
@@ -23,3 +23,22 @@
 
     Step 5: Test and Build
     $ npx keycloakify build
+
+
+### Install Page:
+
+You need a page to be customized you need to pull the page the the following command :
+
+    $ npx keycloakify eject-page
+
+Output:
+<img src="output_theme_type.png"> 
+
+
+
+Adding Story:
+npx keycloakify add-story
+
+
+Account theme init
+npx keycloakify initialize-account-theme
