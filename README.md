@@ -36,10 +36,12 @@ Output:
 
 
 
-Adding Story:
-npx keycloakify add-story
+#### Storybook 
+
+    Adding Story:
+    $ npx keycloakify add-story
 
 
-Account theme init || choose single page for v3 
-npx keycloakify initialize-account-theme
+#### Account theme init || choose single page for v3 
+    $ npx keycloakify initialize-account-theme
 

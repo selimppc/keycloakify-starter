@@ -7,6 +7,8 @@ const KcAccountUi = lazy(() => import("./KcAccountUi"));
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
 
+    console.log(kcContext.properties.MY_APP_API_URL);
+
     return (
         <KcAccountUiLoader 
             kcContext={kcContext} 
